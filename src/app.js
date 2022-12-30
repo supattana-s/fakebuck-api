@@ -10,6 +10,7 @@ const morgan = require("morgan");
 const notFound = require("./middleware/notFound");
 const error = require("./middleware/error");
 const authRoute = require("./routes/authRoute");
+const userRoute = require("./routes/userRoute");
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/auth", authRoute);
+app.use("/users", userRoute);
 
 app.use(notFound);
 app.use(error);
