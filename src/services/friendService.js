@@ -25,7 +25,7 @@ const findUserFriendIdsByUserId = async (id) => {
     return friendIds;
 };
 
-exports.findUserFriendIdsByuserId = findUserFriendIdsByUserId;
+exports.findUserFriendIdsByUserId = findUserFriendIdsByUserId;
 
 exports.findUserFriendsByUserId = async (id) => {
     // SELECT * FROM friends WHERE status = 'ACCEPTED' AND (requester_id = '2' OR accepter_id = '2')

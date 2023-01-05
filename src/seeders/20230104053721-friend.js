@@ -1,6 +1,6 @@
 "use strict";
 
-const { FRIEND_ACCEPTED } = require("../config/constants");
+const { FRIEND_ACCEPTED, FRIEND_PENDING } = require("../config/constants");
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -52,6 +52,41 @@ module.exports = {
                 updated_at: new Date(),
                 requester_id: 17,
                 accepter_id: 2,
+            },
+            {
+                status: FRIEND_PENDING,
+                created_at: new Date(),
+                updated_at: new Date(),
+                requester_id: 1,
+                accepter_id: 11,
+            },
+            {
+                status: FRIEND_PENDING,
+                created_at: new Date(),
+                updated_at: new Date(),
+                requester_id: 11,
+                accepter_id: 16,
+            },
+            {
+                status: FRIEND_PENDING,
+                created_at: new Date(),
+                updated_at: new Date(),
+                requester_id: 15,
+                accepter_id: 16,
+            },
+            {
+                status: FRIEND_PENDING,
+                created_at: new Date(),
+                updated_at: new Date(),
+                requester_id: 15,
+                accepter_id: 1,
+            },
+            {
+                status: FRIEND_PENDING,
+                created_at: new Date(),
+                updated_at: new Date(),
+                requester_id: 1,
+                accepter_id: 16,
             },
         ]);
     },

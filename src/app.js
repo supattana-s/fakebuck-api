@@ -12,6 +12,7 @@ const error = require("./middleware/error");
 const authRoute = require("./routes/authRoute");
 const userRoute = require("./routes/userRoute");
 const authenticate = require("./middleware/authenticate");
+const friendRoute = require("./routes/friendRoute");
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/auth", authRoute);
+app.use("/friends", authenticate, friendRoute);
 app.use("/users", authenticate, userRoute);
 
 app.use(notFound);
