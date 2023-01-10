@@ -49,7 +49,7 @@ exports.createFriend = async (req, res, next) => {
             accepterId: friendId,
         });
 
-        res.status(200).json({ message: "succes request friend" });
+        res.status(200).json({ message: "success request friend" });
     } catch (err) {
         next(err);
     }
