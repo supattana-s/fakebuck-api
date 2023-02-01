@@ -76,11 +76,8 @@ exports.deletePost = async (req, res, next) => {
             throw new AppError("no permission to delete", 403);
         }
 
-        await Comment.destroy(
-            { where: { postId: post.id } },
-            { transaction: t }
-        );
-        await Like.destroy({ where: { postId: post.id } }, { transaction: t });
+        await Comment.destroy({ where: { postId: post.id }, transaction: t });
+        await Like.destroy({ where: { postId: post.id }, transaction: t });
         await post.destroy({ transaction: t });
         await t.commit();
         res.status(200).json({ message: "success delete" });
